@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razik HTML - Belajar HTML 🚀</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-container">
+            <div class="loader-circle"></div>
+            <div class="loader-text">
+                <span class="loading-word">Loading</span>
+                <span class="loading-dots">
+                    <span>.</span><span>.</span><span>.</span>
+                </span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+            <p class="loading-subtitle">Menyiapkan pengalaman belajar terbaik...</p>
+        </div>
+    </div>
+
+    <!-- Cursor Effect -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand" onclick="scrollToTop()">
+                <div class="brand-icon">🚀</div>
+                <div class="brand-text">
+                    <span class="brand-name">Razik</span>
+                    <span class="brand-html html-text">HTML</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">
+                        <span class="link-icon">🏠</span>
+                        <span class="link-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#pengertian" class="nav-link">
+                        <span class="link-icon">📖</span>
+                        <span class="link-text">Pengertian</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sejarah" class="nav-link">
+                        <span class="link-icon">📜</span>
+                        <span class="link-text">Sejarah</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#fungsi" class="nav-link">
+                        <span class="link-icon">⚙️</span>
+                        <span class="link-text">Fungsi</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#galeri" class="nav-link">
+                        <span class="link-icon">🖼️</span>
+                        <span class="link-text">Galeri</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Theme Switch Saklar -->
+                <div class="theme-switch-nav">
+                    <div class="switch-container">
+                        <span class="switch-icon sun-icon">☀️</span>
+                        <label class="switch">
+                            <input type="checkbox" id="themeSwitch">
+                            <span class="switch-slider">
+                                <span class="slider-button"></span>
+                            </span>
+                        </label>
+                        <span class="switch-icon moon-icon">🌙</span>
+                    </div>
+                </div>
+
+                <!-- Settings Button -->
+                <button class="nav-btn settings-btn" id="settingsBtn" aria-label="Settings">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m-6 6l-4.2 4.2m17.4-1l-4.2-4.2m-6-6L1.8 4.8"></path>
+                    </svg>
+                    <span class="btn-tooltip">Settings</span>
+                </button>
+
+                <!-- Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </nav>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header">
+            <h2>⚙️ Settings & Info</h2>
+            <button class="close-btn" id="closeSettings" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="settings-content">
+            <!-- Developer Info -->
+            <div class="settings-section">
+                <h3>👨‍💻 Pembuat Website</h3>
+                <div class="dev-card">
+                    <div class="dev-avatar">
+                        <span class="avatar-letter">R</span>
+                        <div class="avatar-ring"></div>
+                    </div>
+                    <div class="dev-info">
+                        <h4>Razik</h4>
+                        <p class="dev-role">Full Stack Developer</p>
+                        <div class="dev-badge">
+                            <span class="badge-icon">⭐</span>
+                            <span>Pro Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-list">
+                    <a href="/cdn-cgi/l/email-protection#9af1f3e0fbe8edfbf6f3f1e3f5aadafdf7fbf3f6b4f9f5f7" class="contact-card email-card">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value"><span class="__cf_email__" data-cfemail="107b796a716267717c797b697f2050777d71797c3e737f7d">kizarwalikyo0@gmail.com</span></span>
+                        </div>
+                        <div class="contact-arrow">→</div>
+                    </a>
+
+                    <a href="https://wa.me/6287836920010" target="_blank" class="contact-card wa-card">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <span class="contact-label">WhatsApp</span>
+                            <span class="contact-value">+62-878-3692-0010</span>
+                        </div>
+                        <div class="contact-arrow">→</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Website Info -->
+            <div class="settings-section">
+                <h3>🌐 Info Website</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">📦</div>
+                        <div class="info-text">
+                            <span class="info-label">Versi</span>
+                            <span class="info-value">2.0 Ultra</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📅</div>
+                        <div class="info-text">
+                            <span class="info-label">Tahun</span>
+                            <span class="info-value">2026</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🫵</div>
+                        <div class="info-text">
+                            <span class="info-label">untuk siapa</span>
+                            <span class="info-value">umum😏</span>
+                        </div>
+                    </div>
+                    <div class="info-card status-card">
+                        <div class="info-icon">🟢</div>
+                        <div class="info-text">
+                            <span class="info-label">Status</span>
+                            <span class="info-value status-online">Online</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="settings-section">
+                <h3>⚡ Quick Actions</h3>
+                <div class="quick-actions">
+                    <button class="action-btn" onclick="resetProgress()">
+                        <span class="action-icon">🔄</span>
+                        <span>Reset Progress</span>
+                    </button>
+                    <button class="action-btn" onclick="shareWebsite()">
+                        <span class="action-icon">📤</span>
+                        <span>Share</span>
+                    </button>
+                    <button class="action-btn" onclick="printPage()">
+                        <span class="action-icon">🖨️</span>
+                        <span>Print</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Overlay -->
+    <div class="settings-overlay" id="settingsOverlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="animated-gradient"></div>
+            <div class="hero-particles" id="heroParticles"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                <span class="badge-text">✨ Belajar Coding Gratis ✨</span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="title-line">Belajar</span>
+                <span class="title-line"><span class="html-text">HTML</span></span>
+                <span class="title-line">dari Nol</span>
+            </h1>
+
+            <p class="hero-description">
+                Panduan lengkap untuk memahami <span class="html-text">HTML</span> dengan cara yang 
+                mudah, interaktif, dan menyenangkan. Mulai perjalanan coding-mu sekarang! 🚀
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">% Gratis</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">+ Topik</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">/7 Akses</div>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="cta-btn primary-cta" onclick="scrollToSection('pengertian')">
+                    <span class="btn-bg"></span>
+                    <span class="btn-text">Mulai Belajar</span>
+                    <span class="btn-icon">→</span>
+                </button>
+                <button class="cta-btn secondary-cta" onclick="scrollToSection('galeri')">
+                    <span class="btn-bg"></span>
+                    <span class="btn-text">Lihat Galeri</span>
+                    <span class="btn-icon">🖼️</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll untuk eksplorasi</span>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Section: Pengertian -->
+        <section class="content-section" id="pengertian" data-section="pengertian">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <div class="section-title-group">
+                    <h2 class="section-title">Pengertian <span class="html-text">HTML</span></h2>
+                    <div class="section-decoration"></div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card glass-card">
+                    <div class="card-glow"></div>
+                    <p><span class="html-text">HTML</span> (<strong><i>Hyper Text Markup Language</i></strong>) merupakan
+                        bahasa Markup standar yang digunakan untuk membuat dan menyusun halaman website.</p>
+                    <ul class="feature-list">
+                        <li><span class="html-text">HTML</span> bukan bahasa pemrograman.</li>
+                        <li><span class="html-text">HTML</span> tidak bisa berpikir, menghitung, atau mengambil keputusan.</li>
+                        <li>Tugasnya <span class="html-text">HTML</span>: mengatur struktur konten di halaman web.</li>
+                        <li><span class="html-text">HTML</span> menggunakan tag untuk menandai elemen-elemen di halaman web.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Sejarah -->
+        <section class="content-section" id="sejarah" data-section="sejarah">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <div class="section-title-group">
+                    <h2 class="section-title">Sejarah <span class="html-text">HTML</span></h2>
+                    <div class="section-decoration"></div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card glass-card">
+                    <div class="card-glow"></div>
+                    <p>
+                        <span class="html-text">HTML</span> adalah singkatan dari <b>HyperText Markup Language</b>, yaitu bahasa markup
+                        standar yang digunakan untuk membuat dan menyusun halaman web.
+                        <span class="html-text">HTML</span> bukan bahasa pemrograman, melainkan bahasa penanda (markup)
+                        yang berfungsi untuk mengatur struktur konten pada sebuah website.
+                    </p>
+                </div>
+
+                <div class="content-card glass-card">
+                    <h3 class="card-title">Awal Mula <span class="html-text">HTML</span></h3>
+                    <p>
+                        <span class="html-text">HTML</span> pertama kali dikembangkan oleh <i>Tim Berners-Lee</i> pada tahun
+                        <b>1991</b>.
+                        Saat itu, <i>Tim Berners-Lee</i> bekerja di <i>CERN</i> (Organisasi Riset Nuklir Eropa).
+                        Tujuan utama <span class="html-text">HTML</span> adalah untuk memudahkan para ilmuwan berbagi dokumen
+                        dan informasi melalui jaringan internet.
+                    </p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content glass-card">
+                            <h3><span class="html-text">HTML</span> 2.0 (1995)</h3>
+                            <p>Versi standar resmi pertama yang dipublikasikan oleh <i>IETF</i>.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content glass-card">
+                            <h3><span class="html-text">HTML</span> 3.2 (1997)</h3>
+                            <p>Dikembangkan oleh <i>W3C</i>, menambahkan dukungan tabel dan script.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content glass-card">
+                            <h3><span class="html-text">HTML</span> 4.01 (1999)</h3>
+                            <p>Versi yang sangat populer. Pemisahan antara konten dan presentasi dengan CSS.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker special-marker"></div>
+                        <div class="timeline-content glass-card highlight-card">
+                            <h3><span class="html-text">HTML5</span> (2014)</h3>
+                            <p>Revolusi besar! Dukungan multimedia, canvas, semantic tags, dan aplikasi web modern.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Fungsi -->
+        <section class="content-section" id="fungsi" data-section="fungsi">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <div class="section-title-group">
+                    <h2 class="section-title">Fungsi <span class="html-text">HTML</span></h2>
+                    <div class="section-decoration"></div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card glass-card">
+                    <div class="card-glow"></div>
+                    <p><span class="html-text">HTML</span> berfungsi untuk membuat dan menyusun struktur halaman website agar bisa ditampilkan oleh browser.</p>
+                    <ul class="feature-list">
+                        <li>Menampilkan teks (judul, paragraf)</li>
+                        <li>Menampilkan gambar</li>
+                        <li>Membuat tautan (link)</li>
+                        <li>Menyusun elemen-elemen di halaman web</li>
+                        <li>Mengintegrasikan multimedia (video, audio)</li>
+                        <li>Membuat form input (login, pendaftaran)</li>
+                    </ul>
+                </div>
+
+                <div class="content-card glass-card">
+                    <h3 class="card-title">Cara Kerja <span class="html-text">HTML</span></h3>
+                    <ol class="numbered-list">
+                        <li>Developer menulis code <span class="html-text">HTML</span></li>
+                        <li>File disimpan dengan ekstensi .html</li>
+                        <li>Browser membuka file <span class="html-text">HTML</span></li>
+                        <li>Browser membaca dan menerjemahkan tag</li>
+                        <li>Konten ditampilkan sebagai halaman web</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contoh Code -->
+        <section class="content-section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <div class="section-title-group">
+                    <h2 class="section-title">Contoh Code <span class="html-text">HTML</span></h2>
+                    <div class="section-decoration"></div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="code-block">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="code-title"><span class="html-text">HTML</span> Example</span>
+                        <button class="copy-code-btn" onclick="copyCode(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-text">Copy</span>
+                        </button>
+                    </div>
+                    <pre class="code-content"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Hello World&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Halo Dunia!&lt;/h1&gt;
+    &lt;p&gt;Ini contoh HTML sederhana&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Galeri -->
+        <section class="content-section" id="galeri" data-section="galeri">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <div class="section-title-group">
+                    <h2 class="section-title">Galeri Visual</h2>
+                    <div class="section-decoration"></div>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon">🔍</div>
+                        <span class="gallery-text">Lihat Detail</span>
+                    </div>
+                    <img src="img/1.png" alt="Gambar 1" loading="lazy">
+                    <div class="gallery-shine"></div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon">🔍</div>
+                        <span class="gallery-text">Lihat Detail</span>
+                    </div>
+                    <img src="img/2.png" alt="Gambar 2" loading="lazy">
+                    <div class="gallery-shine"></div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon">🔍</div>
+                        <span class="gallery-text">Lihat Detail</span>
+                    </div>
+                    <img src="img/3.png" alt="Gambar 3" loading="lazy">
+                    <div class="gallery-shine"></div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon">🔍</div>
+                        <span class="gallery-text">Lihat Detail</span>
+                    </div>
+                    <img src="img/4.png" alt="Gambar 4" loading="lazy">
+                    <div class="gallery-shine"></div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon">🔍</div>
+                        <span class="gallery-text">Lihat Detail</span>
+                    </div>
+                    <img src="img/5.png" alt="Gambar 5" loading="lazy">
+                    <div class="gallery-shine"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Razik<span class="html-text">HTML</span></h3>
+                    <p>Belajar <span class="html-text">HTML</span> dengan cara yang menyenangkan dan mudah dipahami.</p>
+                    <div class="social-links">
+                        <a href="/cdn-cgi/l/email-protection#79121003180b0e18151012001649391e14181015571a1614" class="social-link" aria-label="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/6287836920010" target="_blank" class="social-link" aria-label="WhatsApp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#pengertian">Pengertian</a></li>
+                        <li><a href="#sejarah">Sejarah</a></li>
+                        <li><a href="#fungsi">Fungsi</a></li>
+                        <li><a href="#galeri">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Kontak</h4>
+                    <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a4143504b585d4b46434153451a6a4d474b434604494547">kizarwalikyo0@gmail.com</a></p>
+                    <p>📱 +62-878-3692-0010</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Projek Razik | Made with ❤️ using <span class="html-text">HTML</span>, CSS & JavaScript</p>
+                <p class="footer-note">🎮 Coba Easter Egg: Ketik "razik" atau kode Konami!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <button class="lightbox-nav prev" onclick="navigateLightbox(-1)">‹</button>
+        <button class="lightbox-nav next" onclick="navigateLightbox(1)">›</button>
+        <img src="" alt="" id="lightboxImage">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </button>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
